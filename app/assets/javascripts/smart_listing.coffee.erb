@@ -171,7 +171,7 @@ class window.SmartListing
   reload: () =>
     unless @container.data('params')
       parametros = {}
-      $('.smart-listing-controls input').each (i,e) =>
+      @container.siblings('.smart-listing-controls').find(":input").each (i,e) =>
         parametros[$(e).attr('name')] = $(e).val();
 
       @container.data('params', parametros)
